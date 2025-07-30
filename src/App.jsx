@@ -1,16 +1,8 @@
-import Navbar from "./components/navbar"
-function App() {
-  
+import React from 'react';
+import Dashboard from './Pages/Dashboard';
 
-  return (
-    <>
-    
-    <Navbar></Navbar>
+const App = () => {
+  return <Dashboard />;
+};
 
-      
-
-    </>
-  )
-}
-
-export default App
+export default App;
