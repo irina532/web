@@ -2,6 +2,7 @@ import React from 'react';
 import Sidebar from "../components/sidebar";
 import Header from '../components/Header';
 import StatCard from '../components/StatCard';
+import RecentActivity from "../components/RecentActivity"; 
 import { FaFileAlt, FaClock, FaCheckCircle, FaUsers } from 'react-icons/fa';
 
 const Dashboard = () => {
@@ -18,11 +19,7 @@ const Dashboard = () => {
             <StatCard title="Accepted" value="156" icon={<FaCheckCircle className="text-xl" />} />
             <StatCard title="Review Team" value="18" icon={<FaUsers className="text-xl" />} />
           </div>
-          <div className="flex justify-center items-center space-x-6 mt-10">
-            <button className="px-4 py-2 bg-white border rounded">&lt;</button>
-            <span className="text-gray-600">7 / 9</span>
-            <button className="px-4 py-2 bg-white border rounded">&gt;</button>
-          </div>
+           <RecentActivity />
         </div>
       </div>
     </div>
