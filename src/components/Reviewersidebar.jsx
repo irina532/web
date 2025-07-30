@@ -5,13 +5,21 @@ const Reviewersidebar = () => {
     <div className="w-64 bg-white shadow-lg p-4">
       <h2 className="text-xl font-bold mb-4">Review Portal</h2>
       <ul className="space-y-4">
-        <li className="font-semibold text-blue-600 flex items-center">
-          <FaTachometerAlt className="mr-2" /> Dashboard
-        </li>
-        <li className="flex items-center"><FaFileAlt className="mr-2" /> Assigned Papers</li>
-        <li className="flex items-center"><FaClock className="mr-2" /> Review History</li>
-        <li className="flex items-center"><FaCalendarAlt className="mr-2" /> Deadlines</li>
-        <li className="flex items-center"><FaChartBar className="mr-2" /> Analytics</li>
+        
+         <li><a href="#" className="flex items-center  text-gray-800 hover:text-blue-600 ">
+                  <FaTachometerAlt /> <span>Dashboard</span> </a></li>
+        <li><a href="#" className="flex items-center  text-gray-800 hover:text-blue-600 ">
+                  <FaFileAlt /> <span>Assigned Papers</span> </a></li>
+        <li><a href="#" className="flex items-center  text-gray-800 hover:text-blue-600 ">
+                  <FaClock /> <span> Review History</span> </a></li>
+        
+        <li><a href="#" className="flex items-center  text-gray-800 hover:text-blue-600 ">
+                  <FaCalendarAlt /> <span>Deadlines</span> </a></li>
+        
+        <li><a href="#" className="flex items-center  text-gray-800 hover:text-blue-600 ">
+                  <FaChartBar /> <span>Analytics</span> </a></li>
+        
+        
       </ul>
     </div>
   );
