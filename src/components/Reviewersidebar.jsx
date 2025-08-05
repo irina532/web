@@ -53,6 +53,14 @@ const Reviewersidebar = ({ isOpen, onClose }) => {
               <span>Assigned Papers</span>
             </Link>
 
+            <Link
+              to="/reviewer/assigned-proposals"
+              className="flex items-center space-x-3 text-gray-600 hover:text-blue-600"
+            >
+              <FaFileAlt />
+              <span>Assigned Proposals</span>
+            </Link>
+
             <a href="#" className="flex items-center space-x-3 text-gray-600 hover:text-blue-600">
               <FaClock />
               <span>Review History</span>

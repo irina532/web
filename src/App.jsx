@@ -7,6 +7,7 @@ import AssignedPapersPage from './Pages/AssignedPapersPage';
 import PaperReviewPage from './Pages/PaperReviewPage';
 import DashboardStats from './components/DashboardStats';
 import AssignedPapersTable from './components/AssignedPapersTable';
+import AssignedProposalsPage from './Pages/AssignedProposalsPage';
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           />
           {/* Assigned papers page */}
           <Route path="assigned-papers" element={<AssignedPapersPage />} />
+           <Route path="assigned-proposals" element={<AssignedProposalsPage />} />
           {/* Review form */}
           <Route path="review/:paperId" element={<PaperReviewPage />} />
         </Route>
