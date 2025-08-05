@@ -1,26 +1,18 @@
-import {
-  FaFileAlt,
-  FaClock,
-  FaTimes,
-} from 'react-icons/fa';
-import { IoMdClose } from "react-icons/io";
+import { Link } from 'react-router-dom';
+import { FaFileAlt, FaClock } from 'react-icons/fa';
+import { IoMdClose } from 'react-icons/io';
 
 const Reviewersidebar = ({ isOpen, onClose }) => {
   return (
     <>
-      {/* Overlay when sidebar is open */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={onClose}
-        />
-      )}
-
+      {/* Overlay */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white border-r z-50 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
-        }`}
-      >
+        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+        onClick={onClose}
+      />
+
+      {/* Sidebar panel */}
+      <div className={`fixed top-0 left-0 h-full w-64 bg-white border-r z-50 shadow transform transition-transform duration-300 ease-in-out`}>
         <div className="px-6 py-8 overflow-y-auto h-full">
           {/* Header */}
           <div className="flex justify-between items-center mb-6">
@@ -43,16 +35,24 @@ const Reviewersidebar = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* Nav Links */}
+          {/* Navigation */}
           <nav className="space-y-4">
-            <a href="#" className="flex items-center space-x-3 text-gray-600 hover:text-blue-600">
+            <Link
+              to="/reviewer"
+              className="flex items-center space-x-3 text-gray-600 hover:text-blue-600"
+            >
               <FaFileAlt />
               <span>Dashboard</span>
-            </a>
-            <a href="#" className="flex items-center space-x-3 text-gray-600 hover:text-blue-600">
+            </Link>
+
+            <Link
+              to="/reviewer/assigned-papers"
+              className="flex items-center space-x-3 text-gray-600 hover:text-blue-600"
+            >
               <FaFileAlt />
               <span>Assigned Papers</span>
-            </a>
+            </Link>
+
             <a href="#" className="flex items-center space-x-3 text-gray-600 hover:text-blue-600">
               <FaClock />
               <span>Review History</span>
