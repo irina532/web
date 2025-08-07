@@ -19,9 +19,7 @@ const AssignedProposalsPage = () => {
     <div className="flex flex-col">
       {/* Top Header */}
       <div className="flex items-center justify-between mb-6">
-        <button onClick={toggleSidebar} className="text-gray-600 text-2xl">
-          <FaBars />
-        </button>
+        
         <h2 className="text-2xl font-semibold">Assigned Proposals</h2>
         <div></div> {/* Spacer for layout balance */}
       </div>
@@ -48,7 +46,7 @@ const AssignedProposalsPage = () => {
               </div>
 
               {/* Review button below */}
-              <Link to={`/reviewer/review/${paper.id}`}>
+             <Link to={`/ReviewerDashboard/review/${paper.id}`}>
                 <button className="w-full flex items-center justify-center gap-2 border border-gray-300 text-gray-700 py-2 px-4 rounded hover:bg-gray-100 mt-2">
                   <FaPen /> Review
                 </button>

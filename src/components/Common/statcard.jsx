@@ -12,4 +12,4 @@ const StatCard = ({ title, value, icon }) => {
   );
 };
 
-export default StatCard;
+export default StatCard;

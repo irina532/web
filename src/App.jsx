@@ -1,39 +1,27 @@
-// App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Dashboard from './Pages/Dashboard';
-import ReviewerDashboard from './Pages/reviewerDashboard';
-import AssignedPapersPage from './Pages/AssignedPapersPage';
-import PaperReviewPage from './Pages/PaperReviewPage';
-import DashboardStats from './components/DashboardStats';
-import AssignedPapersTable from './components/AssignedPapersTable';
-import AssignedProposalsPage from './Pages/AssignedProposalsPage';
+import ReviewerDashboard from './Pages/Reviewer/reviewerDashboard';
+import ReviewerHome from './Pages/Reviewer/ReviewerHome';
+import AssignedPapersPage from './Pages/Reviewer/AssignedPapersPage';
+import AssignedProposalsPage from './Pages/Reviewer/AssignedProposalsPage';
+import PaperReviewPage from './Pages/Reviewer/PaperReviewPage';
+import AdminDashboard from './Pages/Admin/AdminDashboard';
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-
-        {/* Reviewer wrapper */}
-        <Route path="/reviewer" element={<ReviewerDashboard />}>
-          {/* Main reviewer dashboard */}
-          <Route
-            index
-            element={
-              <>
-                <DashboardStats />
-                <AssignedPapersTable />
-              </>
-            }
-          />
-          {/* Assigned papers page */}
-          <Route path="assigned-papers" element={<AssignedPapersPage />} />
-           <Route path="assigned-proposals" element={<AssignedProposalsPage />} />
-          {/* Review form */}
+        {/* Reviewer Layout */}
+        <Route path="/ReviewerDashboard" element={<ReviewerDashboard />}>
+          <Route index element={<ReviewerHome />} />
+          <Route path="assignedpapers" element={<AssignedPapersPage />} />
+          <Route path="assigned-proposals" element={<AssignedProposalsPage />} />
           <Route path="review/:paperId" element={<PaperReviewPage />} />
         </Route>
+         <Route path="/AdminDashboard" element={<AdminDashboard />} />
+        
       </Routes>
+      
     </Router>
   );
 };
