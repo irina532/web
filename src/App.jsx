@@ -6,6 +6,9 @@ import AssignedPapersPage from './Pages/Reviewer/AssignedPapersPage';
 import AssignedProposalsPage from './Pages/Reviewer/AssignedProposalsPage';
 import PaperReviewPage from './Pages/Reviewer/PaperReviewPage';
 import AdminDashboard from './Pages/Admin/AdminDashboard';
+import ReviewHistoryPage from './Pages/Reviewer/ReviewHistoryPage';
+
+
 
 const App = () => {
   return (
@@ -17,6 +20,7 @@ const App = () => {
           <Route path="assignedpapers" element={<AssignedPapersPage />} />
           <Route path="assigned-proposals" element={<AssignedProposalsPage />} />
           <Route path="review/:paperId" element={<PaperReviewPage />} />
+          <Route path="ReviewHistoryPage" element={<ReviewHistoryPage />} />
         </Route>
          <Route path="/AdminDashboard" element={<AdminDashboard />} />
         

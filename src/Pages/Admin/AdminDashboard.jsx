@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import Sidebar from '../../components/Common/Sidebar';
 import Topbar from '../../components/Common/Topbar';
+import LogoutModal from '../../components/Common/LogoutModal';
 
 import {
   FaFileAlt,
@@ -12,6 +13,22 @@ import {
 
 const AdminDashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
+
+  const handleLogoutClick = () => {
+    setIsLogoutModalOpen(true);
+  }
+     const handleCloseModal = () => {
+    setIsLogoutModalOpen(false);
+  };
+  const handleConfirmLogout = () => {
+    setIsLogoutModalOpen(false);
+
+    // Perform logout logic here, like:
+    localStorage.clear(); // or remove tokens
+    window.location.href = '/'; // redirect to login page or landing
+  };
+
 
   return (
     <div className="flex min-h-screen bg-gray-100">
@@ -74,10 +91,19 @@ const AdminDashboard = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        <Topbar onMenuClick={() => setIsSidebarOpen(true)} />
+        <Topbar onMenuClick={() => setIsSidebarOpen(true)} 
+           onLogout={handleLogoutClick}/>
         <main className="p-4">
         <Outlet context={{ toggleSidebar: () => setIsSidebarOpen(true) }} />
         </main>
+       {/* Logout Modal */}
+        {isLogoutModalOpen && (
+          <LogoutModal
+            isOpen={isLogoutModalOpen}
+            onClose={handleCloseModal}
+            onConfirm={handleConfirmLogout}
+          />
+        )}
       </div>
     </div>
   );
